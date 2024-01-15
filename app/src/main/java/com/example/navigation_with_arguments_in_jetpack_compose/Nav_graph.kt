@@ -13,31 +13,30 @@ import androidx.navigation.navArgument
 fun Navigation() {
 
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = "LoginScreen"){
+    NavHost(navController = navController, startDestination = "LoginScreen") {
 
-        composable(route = "LoginScreen"){
+        composable(route = "LoginScreen") {
             LoginScreen(navController)
         }
 
-        composable(route = "Dashboard/{emailValue}/{passwordValue}" ,
+        composable(route = "Dashboard/{emailValue}/{passwordValue}",
             arguments = listOf(
-                navArgument("emailValue"){
+                navArgument("emailValue") {
                     type = NavType.StringType
 
                 },
-                navArgument("passwordValue"){
+                navArgument("passwordValue") {
                     type = NavType.StringType
 
                 }
             )
 
-
-
-            ){
-            backStackEntry ->
-            Dashboard(emailValue = backStackEntry.arguments?.getString("emailValue"),
+        ) { backStackEntry ->
+            Dashboard(
+                emailValue = backStackEntry.arguments?.getString("emailValue"),
                 passwordValue = backStackEntry.arguments?.getString("passwordValue"),
-                naveController = navController)
+                naveController = navController
+            )
         }
     }
 
