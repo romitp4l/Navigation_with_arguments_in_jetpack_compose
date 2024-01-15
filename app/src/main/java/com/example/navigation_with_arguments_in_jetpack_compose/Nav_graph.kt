@@ -23,10 +23,12 @@ fun Navigation() {
             arguments = listOf(
                 navArgument("emailValue") {
                     type = NavType.StringType
+                    defaultValue="thisIsTestMail@gmail.com"
 
                 },
                 navArgument("passwordValue") {
                     type = NavType.StringType
+                    defaultValue ="DemoPassword@3344"
 
                 }
             )

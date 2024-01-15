@@ -21,6 +21,8 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
+import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -77,10 +79,12 @@ fun Dashboard(emailValue: String?, passwordValue: String?, naveController: NavCo
 
 
 }
-
-@Preview(showSystemUi = true, showBackground = true)
-@Composable
-fun DashboardPreview() {
-    Dashboard(emailValue = "romitpal4@gmial.com", passwordValue = "Ujdjdjdj@13338" , naveController = NavController(this))
-
+//class FakeNavController : PreviewParameterProvider<NavController> {
+//    override val values: Sequence<NavController> = sequenceOf(NavController())
+//}
+//
+//@Preview(showSystemUi = true, showBackground = true)
+//@Composable
+//fun DashboardPreview(@PreviewParameter(FakeNavController::class) fakeNavController: NavController) {
+//    Dashboard(emailValue = "romitpal4@gmail.com", passwordValue = "Ujdjdjdj@13338", naveController =  fakeNavController)
 }
